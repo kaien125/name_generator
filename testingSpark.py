@@ -56,7 +56,7 @@ try:
     files_read.append(last_name_path)
 
 except AnalysisException:
-    continue
+  
         
 if len(files_read) == 0:
     print('No files read')
