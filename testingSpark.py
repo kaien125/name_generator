@@ -38,25 +38,25 @@ last_name_path = f"gs://{bucket}/last_name.csv"
 
 files_read = []
 
-try:
-    first_name = (
-        spark.read.format('csv')
-        .load(first_name_path, schema=first_name_schema)
-        .union(first_name)
-    )
-            
-    files_read.append(first_name_path)
 
-    last_name = (
-        spark.read.format('csv')
-        .load(last_name_path, schema=last_name_schema)
-        .union(last_name)
-    )
+first_name = (
+    spark.read.format('csv')
+    .load(first_name_path, schema=first_name_schema)
+    .union(first_name)
+)
             
-    files_read.append(last_name_path)
+files_read.append(first_name_path)
 
-except AnalysisException:
-  
+last_name = (
+    spark.read.format('csv')
+    .load(last_name_path, schema=last_name_schema)
+    .union(last_name)
+)
+            
+files_read.append(last_name_path)
+
+
+    
         
 if len(files_read) == 0:
     print('No files read')
