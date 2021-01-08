@@ -37,8 +37,8 @@ last_name = spark.createDataFrame([], last_name_schema)
 #first_name_path = f"gs://{bucket}/first_names.csv"
 #last_name_path = f"gs://{bucket}/last_name.csv"
 
-first_name_path = "{bucket}/first_names.csv"
-last_name_path = "{bucket}/last_name.csv"
+first_name_path = f"{bucket}/first_names.csv"
+last_name_path = f"{bucket}/last_name.csv"
 
 files_read = []
 
