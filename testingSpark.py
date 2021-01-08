@@ -7,6 +7,7 @@ from pyspark.ml import Pipeline
 from pyspark.sql.functions import rand 
 import pyspark.sql.functions as F
 from pyspark.sql.functions import length
+from pyspark.sql.types import *
 
 
 try:
